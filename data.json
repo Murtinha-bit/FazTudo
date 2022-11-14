@@ -1,1 +1,46 @@
-{"Gabriella": {"endereco": "Sao Joao Batista"}}
+{
+  "clientes": [
+    {
+      "nome": "Gabriel",
+      "endereco": "Vera Cruz",
+      "id": 1
+    },
+    {
+      "nome": "Gabriella",
+      "endereco": "Ari Veigar Pinto",
+      "id": 2
+    },
+    {
+      "nome": "Joao",
+      "endereco": "Nunca",
+      "id": 3
+    },
+    {
+      "nome": "Iarin",
+      "endereco": "UNA",
+      "id": 4
+    }
+  ],
+  "parceiros": [
+    {
+      "nome": "Andre",
+      "servico": "Mecanico"
+    },
+    {
+      "nome": "Felipe",
+      "servico": "Engenheiro"
+    },
+    {
+      "nome": "Gabi",
+      "servico": "Programadora"
+    }
+  ],
+  "servicos": [
+    {
+      "servico": "Mecanico"
+    },
+    {
+      "servico": "Programadora"
+    }
+  ]
+}
