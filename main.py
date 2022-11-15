@@ -34,9 +34,13 @@ class Pessoa:
         file.close()
 
     def CadastroParceiro(self):
+        semana = []
+        entrysemana = {"manha" : False, "tarde" : False}
+        semana.append(entrysemana)
         file = open('data.json')
         data = json.load(file)
-        entryParceiro = { "nome": self.nome,"servico": self.servico}
+        entryParceiro = { "nome": self.nome,"servico": self.servico, "segunda" : semana , "terca" : semana , 
+        "quarta" : semana , "quinta" : semana , "sexta" : semana , "sabado" : semana , "domingo" : semana }
         data["parceiros"].append(entryParceiro)
         with open('data.json', 'w') as file:
             json.dump(data, file)
@@ -67,8 +71,38 @@ match escolha :
         cliente.setId(id)
         cliente.CadastroCliente()
     case 2: 
+        list = []
+        continueInput = 's'
         parceiro = Pessoa(input('Digite o seu nome: '), True)
         parceiro.setServico(input('Digite o servico que voce quer prestar :'))
+        while continueInput == 's' or semana == 8:
+            print("Digite os dias da semana que voce quer trabalhar:")
+            semana = input("1 - SEGUNDA\n 2 - TERCA\n 3 - QUARTA\n 4 - QUINTA\n 5 - SEXTA\n 6 - SABADO\n 7 - DOMINGO\n 8 - TODOS")
+            match semana:
+                case 1:
+                    list.append('segunda')
+                case 2:
+                    list.append('terca')
+                case 3:
+                    list.append('quarta')
+                case 4:
+                    list.append('quinta')
+                case 5:
+                    list.append('sexta')
+                case 6:
+                    list.append('sabado')
+                case 7:
+                    list.append('domingo')
+                case 8:
+                    list.append('segunda')
+                    list.append('terca')
+                    list.append('quarta')
+                    list.append('quinta')
+                    list.append('sexta')
+                    list.append('sabado')
+                    list.append('domingo')
+            continueInput = input('Deseja cadastrar mais um dia? (S/N)').lower()
+            
         file = open('data.json')
         parceiro.CadastroParceiro()
     case 3: 

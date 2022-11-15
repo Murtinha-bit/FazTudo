@@ -33,6 +33,62 @@
     {
       "nome": "Gabi",
       "servico": "Programadora"
+    },
+    {
+      "nome": "lucao",
+      "servico": "nenhum",
+      "segunda": [
+        {
+          "manha": false,
+          "Tarde": false
+        }
+      ]
+    },
+    {
+      "nome": "mumu",
+      "servico": "nenhum",
+      "segunda": [
+        {
+          "manha": false,
+          "tarde": false
+        }
+      ],
+      "terca": [
+        {
+          "manha": false,
+          "tarde": false
+        }
+      ],
+      "quarta": [
+        {
+          "manha": false,
+          "tarde": false
+        }
+      ],
+      "quinta": [
+        {
+          "manha": false,
+          "tarde": false
+        }
+      ],
+      "sexta": [
+        {
+          "manha": false,
+          "tarde": false
+        }
+      ],
+      "sabado": [
+        {
+          "manha": false,
+          "tarde": false
+        }
+      ],
+      "domingo": [
+        {
+          "manha": false,
+          "tarde": false
+        }
+      ]
     }
   ],
   "servicos": [
@@ -41,6 +97,12 @@
     },
     {
       "servico": "Programadora"
+    },
+    {
+      "servico": "nenhum"
+    },
+    {
+      "servico": "nenhum"
     }
   ]
 }
