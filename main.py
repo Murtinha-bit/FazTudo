@@ -4,7 +4,7 @@ from pessoa import *
 def diasDeTrabalho():
     list = [] 
     continueInput = 's'
-    while continueInput == 's' or semana != 8:
+    while continueInput == 's':
             escolhido = 0
             print("Digite os dias da semana que voce quer trabalhar:")
             semana = int(input("1 - SEGUNDA\n2 - TERCA\n3 - QUARTA\n4 - QUINTA\n5 - SEXTA\n6 - SABADO\n7 - DOMINGO\n8 - TODOS\n"))
@@ -90,7 +90,7 @@ def diasDeTrabalho():
                     list.append('domingo')
                     continueInput = 'n'
             if semana != 8 : 
-                continueInput = input('Deseja cadastrar mais um dia? (S/N)').lower()
+                continueInput = input('Deseja cadastrar mais um dia? (S/N) \n').lower()
     return list
 
 escolha = 0
