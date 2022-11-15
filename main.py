@@ -118,6 +118,7 @@ match escolha:
         parceiro.setServico(input('Digite o servico que voce quer prestar :'))
         list = diasDeTrabalho()
         parceiro.CadastroParceiro(list)
+        parceiro.CadastroServico()
 
     case 3: 
         print('3')

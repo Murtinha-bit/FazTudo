@@ -1,5 +1,6 @@
 import json
 
+
 class Pessoa:
 
     def __init__(self, nome, cliente):
@@ -33,6 +34,23 @@ class Pessoa:
             json.dump(data, file)
         file.close()
 
+    def CadastroServico(self):
+        exist = False
+        file = open('data.json') 
+        data = json.load(file)
+        entryServico = {"servico": self.servico} #entryServico recebe um objeto
+        for key in data["servicos"]:
+            if self.servico == key["servico"]:
+                exist = True
+            else:
+                pass
+        if exist == False:
+            data["servicos"].append(entryServico) # chave "servicos" do arquivo json 'data' vai receber por append a variável entryServico
+            with open('data.json', 'w') as file: #abre o arquivo JSON no modo escrita
+                # objeto python (data) tem que ser mantido em um arquivo JSON (file). json.dump escreve no arquivo e salva
+                json.dump(data, file)
+        file.close() #fecha o arquivo JSON
+
     def CadastroParceiro(self, list):
         turno = {"manha" : False, "tarde" : False}
         entryParceiro = { "nome": self.nome,"servico": self.servico}
@@ -44,9 +62,7 @@ class Pessoa:
         with open('data.json', 'w') as file: # abre o arquivo JSON no modo escrita
             # objeto python (data) tem que ser mantido em um arquivo JSON (file). json.dump escreve no arquivo e salva
             json.dump(data, file)
-        entryServico = {"servico": self.servico} #entryServico recebe um objeto
-        data["servicos"].append(entryServico) # chave "servicos" do arquivo json 'data' vai receber por append a variável entryServico
-        with open('data.json', 'w') as file: #abre o arquivo JSON no modo escrita
-            # objeto python (data) tem que ser mantido em um arquivo JSON (file). json.dump escreve no arquivo e salva
-            json.dump(data, file)
         file.close() #fecha o arquivo JSON
+    
+    
+        
