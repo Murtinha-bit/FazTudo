@@ -123,6 +123,16 @@ match escolha:
     case 3: 
         print('3')
     case 4: 
-        print('4')
+        cont = 0
+        file = open('data.json')
+        data = json.load(file)
+        print('Escolha o servico desejado com base na lista abaixo: ')
+        for key in data['servicos']:
+            cont = cont + 1
+        for i in range(cont):
+            print('\n '+ str(i) + ' - ' + data['servicos'][i]['servico'] + '\n')
+        escolha = 0
+        escolha = input('')
+        print(escolha)
 
 
