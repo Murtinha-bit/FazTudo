@@ -1,56 +1,97 @@
 import json
+from pessoa import *
 
-class Pessoa:
-
-    def __init__(self, nome, cliente):
-        self.nome = nome
-        self.cliente = cliente
-        
-    def setServico(self, servico):
-        self.servico = servico
-
-    def getServico(self):
-        return self.servico
-
-    def setId(self, id):
-        self.id = id
-
-    def getId(self):
-        return self.id
-
-    def setEndereco(self, endereco):
-        self.endereco = endereco
-
-    def getEndereco(self):
-        return self.endereco
-
-    def CadastroCliente(self):
-        file = open('data.json')
-        data = json.load(file)
-        entry = { "nome": self.nome,"endereco": self.endereco, "id": self.id}
-        data["clientes"].append(entry)
-        with open('data.json', 'w') as file:
-            json.dump(data, file)
-        file.close()
-
-    def CadastroParceiro(self):
-        semana = []
-        entrysemana = {"manha" : False, "tarde" : False}
-        semana.append(entrysemana)
-        file = open('data.json') #abre o arquivo JSON
-        data = json.load(file) # variavel data carrega arquivo JSON para conseguir manipulá-lo em seguida
-        entryParceiro = { "nome": self.nome,"servico": self.servico, "segunda" : semana , "terca" : semana , 
-        "quarta" : semana , "quinta" : semana , "sexta" : semana , "sabado" : semana , "domingo" : semana } # cria objeto que pega nome e serviço do parceiro e atribui a variável entryParceiro
-        data["parceiros"].append(entryParceiro) # chave "parceiros" do arquivo json 'data' vai receber por append a variável entryParceiro
-        with open('data.json', 'w') as file: # abre o arquivo JSON no modo escrita
-            # objeto python (data) tem que ser mantido em um arquivo JSON (file). json.dump escreve no arquivo e salva
-            json.dump(data, file)
-        entryServico = {"servico": self.servico} #entryServico recebe um objeto
-        data["servicos"].append(entryServico) # chave "servicos" do arquivo json 'data' vai receber por append a variável entryServico
-        with open('data.json', 'w') as file: #abre o arquivo JSON no modo escrita
-            # objeto python (data) tem que ser mantido em um arquivo JSON (file). json.dump escreve no arquivo e salva
-            json.dump(data, file)
-        file.close() #fecha o arquivo JSON
+def diasDeTrabalho():
+    list = [] 
+    continueInput = 's'
+    while continueInput == 's' or semana != 8:
+            escolhido = 0
+            print("Digite os dias da semana que voce quer trabalhar:")
+            semana = int(input("1 - SEGUNDA\n2 - TERCA\n3 - QUARTA\n4 - QUINTA\n5 - SEXTA\n6 - SABADO\n7 - DOMINGO\n8 - TODOS\n"))
+            match semana:
+                case 1:
+                    for item in list:
+                        print(item)
+                        if 'segunda' == item:
+                            escolhido = 1
+                        else:
+                            pass
+                    if escolhido == 0 :
+                        list.append('segunda')
+                    else:
+                        print('Voce ja escolheu esse dia da semana, escolha um dia diferente')
+                case 2:
+                    for item in list:
+                        if 'terca' == item:
+                            escolhido = 1
+                        else:
+                            pass
+                    if escolhido == 0 :
+                        list.append('terca')
+                    else:
+                        print('Voce ja escolheu esse dia da semana, escolha um dia diferente')
+                case 3:
+                    for item in list:
+                        if 'quarta' == item:
+                            escolhido = 1
+                        else:
+                            pass
+                    if escolhido == 0 :
+                        list.append('quarta')
+                    else:
+                        print('Voce ja escolheu esse dia da semana, escolha um dia diferente')
+                case 4:
+                    for item in list:
+                        if 'quinta' == item:
+                            escolhido = 1
+                        else:
+                            pass
+                    if escolhido == 0 :
+                        list.append('quinta')
+                    else:
+                        print('Voce ja escolheu esse dia da semana, escolha um dia diferente')
+                case 5:
+                    for item in list:
+                        if 'sexta' == item:
+                            escolhido = 1
+                        else:
+                            pass
+                    if escolhido == 0 :
+                        list.append('sexta')
+                    else:
+                        print('Voce ja escolheu esse dia da semana, escolha um dia diferente')
+                case 6:
+                    for item in list:
+                        if 'sabado' == item:
+                            escolhido = 1
+                        else:
+                            pass
+                    if escolhido == 0 :
+                        list.append('sabado')
+                    else:
+                        print('Voce ja escolheu esse dia da semana, escolha um dia diferente')
+                case 7:
+                    for item in list:
+                        if 'domingo' == item:
+                            escolhido = 1
+                        else:
+                            pass
+                    if escolhido == 0 :
+                        list.append('domingo')
+                    else:
+                        print('Voce ja escolheu esse dia da semana, escolha um dia diferente')
+                case 8:
+                    list.append('segunda')
+                    list.append('terca')
+                    list.append('quarta')
+                    list.append('quinta')
+                    list.append('sexta')
+                    list.append('sabado')
+                    list.append('domingo')
+                    continueInput = 'n'
+            if semana != 8 : 
+                continueInput = input('Deseja cadastrar mais um dia? (S/N)').lower()
+    return list
 
 escolha = 0
 print('Faz tudo WEB \n')
@@ -73,40 +114,11 @@ match escolha:
         cliente.setId(id)
         cliente.CadastroCliente()
     case 2: 
-        list = []
-        continueInput = 's'
         parceiro = Pessoa(input('Digite o seu nome: '), True)
         parceiro.setServico(input('Digite o servico que voce quer prestar :'))
-        while continueInput == 's' or semana == 8:
-            print("Digite os dias da semana que voce quer trabalhar:")
-            semana = input("1 - SEGUNDA\n 2 - TERCA\n 3 - QUARTA\n 4 - QUINTA\n 5 - SEXTA\n 6 - SABADO\n 7 - DOMINGO\n 8 - TODOS")
-            match semana:
-                case 1:
-                    list.append('segunda')
-                case 2:
-                    list.append('terca')
-                case 3:
-                    list.append('quarta')
-                case 4:
-                    list.append('quinta')
-                case 5:
-                    list.append('sexta')
-                case 6:
-                    list.append('sabado')
-                case 7:
-                    list.append('domingo')
-                case 8:
-                    list.append('segunda')
-                    list.append('terca')
-                    list.append('quarta')
-                    list.append('quinta')
-                    list.append('sexta')
-                    list.append('sabado')
-                    list.append('domingo')
-            continueInput = input('Deseja cadastrar mais um dia? (S/N)').lower()
-            
-        file = open('data.json')
-        parceiro.CadastroParceiro()
+        list = diasDeTrabalho()
+        parceiro.CadastroParceiro(list)
+
     case 3: 
         print('3')
     case 4: 

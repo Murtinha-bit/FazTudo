@@ -2,59 +2,33 @@
   "clientes": [
     {
       "nome": "Gabriel",
-      "telefone" : "(31) 98823-3994", 
+      "telefone": "(31) 98823-3994",
       "bairro": "Vera Cruz",
       "id": 1
     },
     {
       "nome": "Gabriella",
-      "telefone" : "(31) 98823-3994", 
+      "telefone": "(31) 98823-3994",
       "bairro": "Ari Veigar Pinto",
       "id": 2
-    },
-    {
-      "nome": "Joao",
-      "telefone" : "(31) 98823-3994", 
-      "bairro": "Nunca",
-      "id": 3
-    },
-    {
-      "nome": "Iarin",
-      "telefone" : "(31) 98823-3994", 
-      "bairro": "UNA",
-      "id": 4
     }
   ],
   "parceiros": [
     {
-      "id" : 0, 
+      "id": 0,
       "nome": "Andre",
-      "telefone" : "(31) 98823-3994", 
+      "telefone": "(31) 98823-3994",
       "servicos": [
-       { "servico" : "Mecanico"}, 
-       { "servico" : "Programador"}, 
-       { "servico" : "Encanador"}
+        {
+          "servico": "Mecanico"
+        },
+        {
+          "servico": "Programador"
+        },
+        {
+          "servico": "Encanador"
+        }
       ]
-    },
-    {
-      "id" : 1, 
-      "nome": "Felipe",
-      "telefone" : "(31) 98823-3994", 
-      "servicos": [
-        { "servico" : "Mecanico"}, 
-        { "servico" : "Programador"}, 
-        { "servico" : "Encanador"}
-       ]
-    },
-    { 
-      "id": 2, 
-      "nome": "Gabi",
-      "telefone" : "(31) 98823-3994", 
-      "servicos": [
-        { "servico" : "Mecanico"}, 
-        { "servico" : "Programador"}, 
-        { "servico" : "Encanador"}
-       ]
     }
   ],
   "servicos": [
@@ -65,10 +39,13 @@
       "servico": "Programadora"
     },
     {
-      "servico": "nenhum"
+      "servico": "Puta"
     },
     {
-      "servico": "nenhum"
+      "servico": "Lulista"
+    },
+    {
+      "servico": "Teste"
     }
   ]
 }
