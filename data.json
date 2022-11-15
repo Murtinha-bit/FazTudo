@@ -2,93 +2,59 @@
   "clientes": [
     {
       "nome": "Gabriel",
-      "endereco": "Vera Cruz",
+      "telefone" : "(31) 98823-3994", 
+      "bairro": "Vera Cruz",
       "id": 1
     },
     {
       "nome": "Gabriella",
-      "endereco": "Ari Veigar Pinto",
+      "telefone" : "(31) 98823-3994", 
+      "bairro": "Ari Veigar Pinto",
       "id": 2
     },
     {
       "nome": "Joao",
-      "endereco": "Nunca",
+      "telefone" : "(31) 98823-3994", 
+      "bairro": "Nunca",
       "id": 3
     },
     {
       "nome": "Iarin",
-      "endereco": "UNA",
+      "telefone" : "(31) 98823-3994", 
+      "bairro": "UNA",
       "id": 4
     }
   ],
   "parceiros": [
     {
+      "id" : 0, 
       "nome": "Andre",
-      "servico": "Mecanico"
+      "telefone" : "(31) 98823-3994", 
+      "servicos": [
+       { "servico" : "Mecanico"}, 
+       { "servico" : "Programador"}, 
+       { "servico" : "Encanador"}
+      ]
     },
     {
+      "id" : 1, 
       "nome": "Felipe",
-      "servico": "Engenheiro"
+      "telefone" : "(31) 98823-3994", 
+      "servicos": [
+        { "servico" : "Mecanico"}, 
+        { "servico" : "Programador"}, 
+        { "servico" : "Encanador"}
+       ]
     },
-    {
+    { 
+      "id": 2, 
       "nome": "Gabi",
-      "servico": "Programadora"
-    },
-    {
-      "nome": "lucao",
-      "servico": "nenhum",
-      "segunda": [
-        {
-          "manha": false,
-          "Tarde": false
-        }
-      ]
-    },
-    {
-      "nome": "mumu",
-      "servico": "nenhum",
-      "segunda": [
-        {
-          "manha": false,
-          "tarde": false
-        }
-      ],
-      "terca": [
-        {
-          "manha": false,
-          "tarde": false
-        }
-      ],
-      "quarta": [
-        {
-          "manha": false,
-          "tarde": false
-        }
-      ],
-      "quinta": [
-        {
-          "manha": false,
-          "tarde": false
-        }
-      ],
-      "sexta": [
-        {
-          "manha": false,
-          "tarde": false
-        }
-      ],
-      "sabado": [
-        {
-          "manha": false,
-          "tarde": false
-        }
-      ],
-      "domingo": [
-        {
-          "manha": false,
-          "tarde": false
-        }
-      ]
+      "telefone" : "(31) 98823-3994", 
+      "servicos": [
+        { "servico" : "Mecanico"}, 
+        { "servico" : "Programador"}, 
+        { "servico" : "Encanador"}
+       ]
     }
   ],
   "servicos": [
