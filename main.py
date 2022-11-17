@@ -93,30 +93,68 @@ def diasDeTrabalho():
                 continueInput = input('Deseja cadastrar mais um dia? (S/N) \n').lower()
     return list
 
+def conferirID(tipoDePessoa):
+    i = 0
+    id = 0
+    file = open('data.json')
+    data = json.load(file)
+    if tipoDePessoa == 'cliente':
+        for pessoa in data['clientes']:
+            i += 1
+        id = i + 1
+        return id
+    elif tipoDePessoa == 'parceiros':
+        for pessoa in data['parceiros']:
+            i += 1
+        id = i + 1
+        return id
+
+def pegarSemana():
+    print('\nPara qual dia da semana voce necessita o servico?\n')
+    semana = int(input('1 - segunda \n2 - terca \n3 - quarta \n4 - quinta \n5 - sexta\n6 - sabado \n7 - domingo\n'))
+    match semana:
+        case 1:
+            return 'segunda'
+        case 2:
+            return 'terca'
+        case 3:
+            return 'quarta'
+        case 4:
+            return 'quinta'
+        case 5:
+            return 'sexta'
+        case 6:
+            return 'sabado'
+        case 7:
+            return 'domingo'
+        
+   
+    
+
+
+
+
+
 escolha = 0
 print('Faz tudo WEB \n')
 escolha = int(input('1 - Cadastro Cliente \n2 - Cadastro Parceiro \n3 - Financeiro \n4 - Solicitar Servico \n'))
 match escolha:
     case 1:
-        contador = 1
-        cliente = Pessoa(input('Digite o seu nome: '), True)
+        tipoDePessoa = 'cliente'
+        cliente = Pessoa(input('Digite o seu nome: '),input('Digite o seu numero de telefone :'))
         cliente.setEndereco(input('Digite o endereco :'))
         file = open('data.json')
         data = json.load(file)
-        while contador > 0:
-            contador = 0
-            id = (int(input('Digite seu id (Sera usado para logar no seu usuario depois): ')))
-            for key in data["clientes"]:
-                if id == key["id"]:
-                    contador=+1
-            if contador > 0:
-                print('Esse id ja existe para outro usuario, por favor escolha outro: ')
+        id = conferirID(tipoDePessoa)
         cliente.setId(id)
         cliente.CadastroCliente()
     case 2: 
-        parceiro = Pessoa(input('Digite o seu nome: '), True)
+        tipoDePessoa = 'parceiros'
+        parceiro = Pessoa(input('Digite o seu nome: ') ,input('Digite o seu numero de telefone :'))
         parceiro.setServico(input('Digite o servico que voce quer prestar :'))
         list = diasDeTrabalho()
+        id = conferirID(tipoDePessoa)
+        parceiro.setId(id)
         parceiro.CadastroParceiro(list)
         parceiro.CadastroServico()
 
@@ -130,9 +168,37 @@ match escolha:
         for key in data['servicos']:
             cont = cont + 1
         for i in range(cont):
-            print('\n '+ str(i) + ' - ' + data['servicos'][i]['servico'] + '\n')
-        escolha = 0
-        escolha = input('')
-        print(escolha)
+            print('\n '+ str(i) + ' - ' + data['servicos'][i]['servico'] )
+        escolhaServico = int(input(''))
+        semana = pegarSemana()
+        print('\nPara qual turno do dia voce deseja?')
+        turno = int(input('1 - manha \n2 - tarde \n'))
+        match turno:
+            case 1:
+                turno = 'manha'
+            case 2:
+                turno = 'tarde'
+        cont = 0
+        empty = True
+        for pessoa in data['parceiros']:
+            cont = cont + 1
+            if pessoa['servico'] == data['servicos'][escolhaServico]['servico'] :
+                if pessoa[semana][turno] == False:
+                    print('Selecione uns de nossos parceiros disponiveis (Digite o numero na frente do nome do parceiro): \n')
+                    escolhaParceiro = int(input(str(pessoa['id']) + ' - ' + pessoa['nome'] + '\n'))
+                    empty = False
+        if empty == False:
+            for i in range(cont):
+                if data['parceiros'][i]['id'] == escolhaParceiro:
+                    print('\nParabens o match esta feito, ja mandamos suas informacoes para nosso parceiro')
+                    print('e aqui esta o numero dele para entrar em contato: ' + data['parceiros'][i]['telefone'])
+                    data['parceiros'][i][semana][turno] = (True)   
+            with open('data.json', 'w') as file:
+                json.dump(data, file)
+            file.close() 
+        else:
+            print('Desculpe mas nao temos parceiros disponiveis nessa data, faca outra solicitacao pf')
+            
+        
 
 

@@ -1,34 +1,34 @@
 {
   "clientes": [
     {
+      "id": 1,
       "nome": "Gabriel",
       "telefone": "(31) 98823-3994",
-      "bairro": "Vera Cruz",
-      "id": 1
+      "bairro": "Vera Cruz"
     },
     {
+      "id": 2,
       "nome": "Gabriella",
       "telefone": "(31) 98823-3994",
-      "bairro": "Ari Veigar Pinto",
-      "id": 2
+      "bairro": "Ari Veigar Pinto"
+    },
+    {
+      "id": 3,
+      "nome": "Lula",
+      "telefone": "444444444",
+      "endereco": "Planalto"
     }
   ],
   "parceiros": [
     {
-      "id": 0,
+      "id": 1,
       "nome": "Andre",
-      "telefone": "(31) 98823-3994",
-      "servicos": [
-        {
-          "servico": "Mecanico"
-        },
-        {
-          "servico": "Programador"
-        },
-        {
-          "servico": "Encanador"
-        }
-      ]
+      "telefone": "31222222",
+      "servico": "Programador",
+      "segunda": {
+        "manha": true,
+        "tarde": true
+      }
     }
   ],
   "servicos": [
@@ -40,6 +40,12 @@
     },
     {
       "servico": "BONITO"
+    },
+    {
+      "servico": "Empresario"
+    },
+    {
+      "servico": "Programador"
     }
   ]
 }
