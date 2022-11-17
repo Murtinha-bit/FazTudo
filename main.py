@@ -180,14 +180,17 @@ match escolha:
                 turno = 'tarde'
         cont = 0
         empty = True
+        print('Selecione uns de nossos parceiros disponiveis (Digite o numero na frente do nome do parceiro): \n')
         for pessoa in data['parceiros']:
             cont = cont + 1
             if pessoa['servico'] == data['servicos'][escolhaServico]['servico'] :
-                if pessoa[semana][turno] == False:
-                    print('Selecione uns de nossos parceiros disponiveis (Digite o numero na frente do nome do parceiro): \n')
-                    escolhaParceiro = int(input(str(pessoa['id']) + ' - ' + pessoa['nome'] + '\n'))
-                    empty = False
+                if semana in pessoa:
+                    if pessoa[semana][turno] == False:
+                        # escolhaParceiro = int(input(str(pessoa['id']) + ' - ' + pessoa['nome'] + '\n'))
+                        print(str(pessoa['id']) + ' - ' + pessoa['nome'] + '\n')
+                        empty = False
         if empty == False:
+            escolhaParceiro = int(input(''))
             for i in range(cont):
                 if data['parceiros'][i]['id'] == escolhaParceiro:
                     print('\nParabens o match esta feito, ja mandamos suas informacoes para nosso parceiro')
@@ -198,7 +201,7 @@ match escolha:
             file.close() 
         else:
             print('Desculpe mas nao temos parceiros disponiveis nessa data, faca outra solicitacao pf')
-            
+        
         
 
 
