@@ -1,6 +1,23 @@
 import json
 
 
+def conferirID(tipoDePessoa):
+    i = 0
+    id = 0
+    file = open('data.json')
+    data = json.load(file)
+    if tipoDePessoa == 'cliente':
+        for pessoa in data['clientes']:
+            i += 1
+        id = i + 1
+        return id
+    elif tipoDePessoa == 'parceiros':
+        for pessoa in data['parceiros']:
+            i += 1
+        id = i + 1
+        return id
+
+        
 class Pessoa:
 
     def __init__(self, nome, telefone):
