@@ -142,7 +142,7 @@
         "tarde": false
       },
       "quarta": {
-        "manha": false,
+        "manha": true,
         "tarde": false
       }
     }
@@ -159,6 +159,12 @@
     },
     {
       "servico": "ss"
+    }
+  ],
+  "financeiro": [
+    {
+      "vendas": 1,
+      "manuntencao": 652.3
     }
   ]
 }

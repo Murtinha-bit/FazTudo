@@ -34,7 +34,15 @@ match escolha:
 
     #######################################################################
     case 3: 
-        print('3')
+        file = open('data.json')
+        data = json.load(file)
+        lucro = (data['financeiro'][0]['vendas'] * 50) * 0.20
+        saldo = lucro - data['financeiro'][0]['manuntencao']
+        print('Nota Fiscal do Mes: \n')
+        print('Numero de vendas : ' + str(data['financeiro'][0]['vendas']) + '\n' )
+        print('Quantidade de Lucro: ' + str(lucro) + '\n')
+        print('Custo para manter o app no ar:'+ str(data['financeiro'][0]['manuntencao']) + '\n')
+        print('Saldo: ' + str(saldo) )
 
     #######################################################################
     case 4: 
@@ -72,6 +80,7 @@ match escolha:
                     print('\nParabens o match esta feito, ja mandamos suas informacoes para nosso parceiro')
                     print('e aqui esta o numero dele para entrar em contato: ' + data['parceiros'][i]['telefone'])
                     data['parceiros'][i][semana][turno] = (True)   
+                    data['financeiro'][0]['vendas'] = data['financeiro'][0]['vendas'] + 1
             with open('data.json', 'w') as file:
                 json.dump(data, file)
             file.close() 
