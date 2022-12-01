@@ -17,6 +17,12 @@
       "nome": "Lula",
       "telefone": "444444444",
       "endereco": "Planalto"
+    },
+    {
+      "id": 4,
+      "nome": "CASTRO",
+      "telefone": "333",
+      "endereco": "ES"
     }
   ],
   "parceiros": [
@@ -121,6 +127,24 @@
         "manha": false,
         "tarde": false
       }
+    },
+    {
+      "id": 6,
+      "nome": "Mutuca",
+      "telefone": "222",
+      "servico": "ss",
+      "segunda": {
+        "manha": true,
+        "tarde": false
+      },
+      "terca": {
+        "manha": false,
+        "tarde": false
+      },
+      "quarta": {
+        "manha": true,
+        "tarde": false
+      }
     }
   ],
   "servicos": [
@@ -132,6 +156,15 @@
     },
     {
       "servico": "teste"
+    },
+    {
+      "servico": "ss"
+    }
+  ],
+  "financeiro": [
+    {
+      "vendas": 1,
+      "manuntencao": 652.3
     }
   ]
 }

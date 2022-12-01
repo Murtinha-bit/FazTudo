@@ -1,0 +1,5 @@
+1 -  custo mensalmente para manter o app no ar 178 dolares
+
+2 -  ganho por match feito 20% de 50 reais (preco fixo)
+
+3 - retornar saldo do mes 
