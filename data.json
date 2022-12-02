@@ -18,11 +18,18 @@
       "telefone": "444444444",
       "endereco": "Planalto"
     },
+    { "id": 4, "nome": "CASTRO", "telefone": "333", "endereco": "ES" },
     {
-      "id": 4,
-      "nome": "CASTRO",
-      "telefone": "333",
-      "endereco": "ES"
+      "id": 99,
+      "nome": "Felipe Stemler",
+      "telefone": "99999999",
+      "endereco": "Rua abcd"
+    },
+    {
+      "id": 99,
+      "nome": "Felipe Stemler",
+      "telefone": "99999999",
+      "endereco": "Rua abcd"
     }
   ],
   "parceiros": [
@@ -31,140 +38,72 @@
       "nome": "Andre",
       "telefone": "31222222",
       "servico": "Programador",
-      "segunda": {
-        "manha": true,
-        "tarde": true
-      }
+      "segunda": { "manha": true, "tarde": true }
     },
     {
       "id": 2,
       "nome": "Kaleb",
       "telefone": "66666",
       "servico": "Faxineiro",
-      "segunda": {
-        "manha": true,
-        "tarde": false
-      },
-      "terca": {
-        "manha": false,
-        "tarde": false
-      },
-      "quarta": {
-        "manha": false,
-        "tarde": false
-      },
-      "quinta": {
-        "manha": false,
-        "tarde": false
-      },
-      "sexta": {
-        "manha": false,
-        "tarde": false
-      },
-      "sabado": {
-        "manha": false,
-        "tarde": false
-      },
-      "domingo": {
-        "manha": false,
-        "tarde": false
-      }
+      "segunda": { "manha": true, "tarde": false },
+      "terca": { "manha": false, "tarde": false },
+      "quarta": { "manha": false, "tarde": false },
+      "quinta": { "manha": false, "tarde": false },
+      "sexta": { "manha": false, "tarde": false },
+      "sabado": { "manha": false, "tarde": false },
+      "domingo": { "manha": false, "tarde": false }
     },
     {
       "id": 3,
       "nome": "Kayleigh ",
       "telefone": "77777",
       "servico": "Faxineiro",
-      "sabado": {
-        "manha": false,
-        "tarde": false
-      }
+      "sabado": { "manha": false, "tarde": false }
     },
     {
       "id": 4,
       "nome": "Moesha ",
       "telefone": "888888",
       "servico": "Faxineiro",
-      "segunda": {
-        "manha": false,
-        "tarde": false
-      },
-      "sexta": {
-        "manha": false,
-        "tarde": false
-      }
+      "segunda": { "manha": false, "tarde": false },
+      "sexta": { "manha": false, "tarde": false }
     },
     {
       "id": 5,
       "nome": "Teste",
       "telefone": "2",
       "servico": "teste",
-      "domingo": {
-        "manha": false,
-        "tarde": false
-      },
-      "segunda": {
-        "manha": false,
-        "tarde": false
-      },
-      "terca": {
-        "manha": false,
-        "tarde": false
-      },
-      "quarta": {
-        "manha": false,
-        "tarde": false
-      },
-      "quinta": {
-        "manha": false,
-        "tarde": false
-      },
-      "sexta": {
-        "manha": false,
-        "tarde": false
-      },
-      "sabado": {
-        "manha": false,
-        "tarde": false
-      }
+      "domingo": { "manha": false, "tarde": false },
+      "segunda": { "manha": false, "tarde": false },
+      "terca": { "manha": false, "tarde": false },
+      "quarta": { "manha": false, "tarde": false },
+      "quinta": { "manha": false, "tarde": false },
+      "sexta": { "manha": false, "tarde": false },
+      "sabado": { "manha": false, "tarde": false }
     },
     {
       "id": 6,
       "nome": "Mutuca",
       "telefone": "222",
       "servico": "ss",
-      "segunda": {
-        "manha": true,
-        "tarde": false
-      },
-      "terca": {
-        "manha": false,
-        "tarde": false
-      },
-      "quarta": {
-        "manha": true,
-        "tarde": false
-      }
+      "segunda": { "manha": true, "tarde": false },
+      "terca": { "manha": false, "tarde": false },
+      "quarta": { "manha": true, "tarde": false }
+    },
+    {
+      "id": 35,
+      "nome": "Murtinha do Python",
+      "telefone": "99999999",
+      "servico": "Programador Python",
+      "segunda": { "manha": false, "tarde": false },
+      "quarta": { "manha": false, "tarde": false }
     }
   ],
   "servicos": [
-    {
-      "servico": "Programador"
-    },
-    {
-      "servico": "Faxineiro"
-    },
-    {
-      "servico": "teste"
-    },
-    {
-      "servico": "ss"
-    }
+    { "servico": "Programador" },
+    { "servico": "Faxineiro" },
+    { "servico": "teste" },
+    { "servico": "ss" }
   ],
-  "financeiro": [
-    {
-      "vendas": 1,
-      "manuntencao": 652.3
-    }
-  ]
+  "financeiro": [{ "vendas": 1, "manuntencao": 652.3 }]
 }

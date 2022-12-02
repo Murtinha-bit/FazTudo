@@ -50,6 +50,7 @@ class Pessoa:
         with open('data.json', 'w') as file:
             json.dump(data, file)
         file.close()
+        return 'Cliente Cadastrado'
 
     def CadastroParceiro(self, list):
         turno = {"manha" : False, "tarde" : False}
@@ -63,6 +64,7 @@ class Pessoa:
             # objeto python (data) tem que ser mantido em um arquivo JSON (file). json.dump escreve no arquivo e salva
             json.dump(data, file)
         file.close() #fecha o arquivo JSON
+        return 'Parceiro Cadastrado'
     
     def CadastroServico(self):
         exist = False
@@ -80,6 +82,7 @@ class Pessoa:
                 # objeto python (data) tem que ser mantido em um arquivo JSON (file). json.dump escreve no arquivo e salva
                 json.dump(data, file)
         file.close() #fecha o arquivo JSON
+        return 'Serviço Cadastrado'
     
     
         

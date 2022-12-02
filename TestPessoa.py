@@ -23,4 +23,23 @@ class TestPessoa(unittest.TestCase):
         esperado = 'Rua Teste 123'
         self.assertEqual(resultado, esperado)
 
+    def teste_cadastroCliente(self):
+        cliente = Pessoa('Felipe Stemler', '99999999')
+        cliente.setEndereco('Rua abcd')
+        cliente.setId(99);
+        resultado = cliente.CadastroCliente()
+        esperado = 'Cliente Cadastrado'
+        self.assertEqual(resultado, esperado)
+
+        
+    def teste_cadastroParceiro(self):
+        parceiro = Pessoa('Murtinha do Python', '99999999')
+        parceiro.setServico('Programador Python')
+        parceiro.setId(35);
+        list = ['segunda', 'quarta']
+        resultado = parceiro.CadastroParceiro(list)
+        esperado = 'Parceiro Cadastrado'
+        self.assertEqual(resultado, esperado)
+
+
 unittest.main(argv=[''], verbosity=2, exit=False)
